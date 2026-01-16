@@ -1,2 +1,7 @@
 # ZhipingComments
-A data set of Zhiping Comments（脂评） on Shi Tou Ji/石头记 (Hong Lou Meng/红楼梦）
+A data set of Zhiping/脂评 Comments on Shi Tou Ji/The Story of the Stone/石头记, a.k.a., Hong Lou Meng/Dream of the Red Chamber/红楼梦
+
+The data set is generated using ChatGPT Pro based on a publicly available online version of 脂砚斋重评石头记.
+
+List of found issues:
+(1) The variable "section" is misdefined and should be revised or discarded.
