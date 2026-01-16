@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Compute key summary statistics for ZhipiComments.csv.
+"""Compute key summary statistics for zhipi_comments_dataset_github_polished.csv.
 
 Usage:
   python compute_summary_stats.py \
-    --input ZhipiComments.csv \
+    --input zhipi_comments_dataset_github_polished.csv \
     --output DATA_SUMMARY_REPORT.md
 
 The script is intentionally dependency-light (pandas only) and writes a Markdown

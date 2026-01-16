@@ -1,11 +1,11 @@
 # 脂批（批注/评语）数据集：变量说明（Data Dictionary）
 
-本仓库包含从《石头记/红楼梦》纯文本（TXT）自动抽取的批注/评语（“脂批”）数据集。每一行对应一个“批语单元”（通常是一个【……】括号块中的一条带标签批语；若同一括号块内含多条标签批语，会拆分为多行）。
+本仓库包含从《红楼梦（脂批本完美版）》DOCX 转写为纯文本（TXT）后，自动抽取的批注/评语（“脂批”）数据集。每一行对应一个“批语单元”（通常是一个【……】括号块中的一条带标签批语；若同一括号块内含多条标签批语，会拆分为多行）。
 
 ## 文件
-- `ShiTouJi.txt`：石头记/红楼梦原始文本，其中【……】括号块内包含批语。
-- `ZhipiComments.csv`：主数据集（本仓库的“可分析数据”）。
-- `BuildCommentsData.py`：复现脚本（从 TXT 生成 CSV）。
+- `hongloumeng_zhipi_original.txt`：由原始 DOCX 逐段落转写得到的纯文本（每个 DOCX 段落对应 TXT 中一行）。
+- `zhipi_comments_dataset_github_polished.csv`：主数据集（本仓库的“可分析数据”）。
+- `build_zhipi_comments_dataset.py`：复现脚本（从 TXT 生成 CSV）。
 - `LICENSE`：GPL-3.0 许可（适用于脚本/代码；对文本与数据的版权归属请自行核验）。
 
 > 注意：作品《红楼梦》本体已属公有领域，但具体电子整理版/标点/汇编格式可能存在权利主张。将原文全文（TXT）公开前，请自行确认来源与再分发权限。
@@ -19,7 +19,7 @@
 - `comment_id`：批语单元的顺序编号（按文档自前至后扫描产生，1 起始）。
 - `chapter_number`：回目序号（从“第X回 …”标题解析，阿拉伯数字）。
 - `chapter_title`：当前回目标题的原文行（保留原文中的括号/空白/制表符等）。
-- `section`：文档中的非回目分区标题（目前主要识别“戚蓼生序”“甲戌本凡例”等）。
+- `section`：文档中的非回目分区标题（目前仅识别“戚蓼生序”“甲戌本凡例”等前置区段标题）。该字段**不会**延伸覆盖正文：当叙事正文开始后会重置为空，因此绝大多数行为空值；可用于快速过滤/定位“序/凡例”类材料。
 - `doc_part`：`toc` / `body`。依据章节标题是否带页码制表符及其位置粗分“目录/正文”。
 - `is_toc_entry`：是否为目录型回目行（1/0）。
 - `paragraph_index`：批语所在的 TXT 行号（对应原 DOCX 段落序号，从 0 计）。
@@ -85,10 +85,10 @@
 
 ## 复现方法（概要）
 
-1. 获取并确定在仓库中存在带有脂评的红楼梦原始文本 `ShiTouJi.txt`。
+1. 确保仓库中存在 `hongloumeng_zhipi_original.txt`。
 2. 运行：
    ```bash
-   python BuildCommentData.py      --input ShiTouJi.txt      --output ZhipiCommentsRep.csv
+   python build_zhipi_comments_dataset.py      --input hongloumeng_zhipi_original.txt      --output zhipi_comments_dataset_github_polished.csv
    ```
 3. 生成的 CSV 应与仓库版本一致（同列顺序、同规则）。
 

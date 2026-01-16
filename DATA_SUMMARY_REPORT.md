@@ -1,6 +1,6 @@
 # 脂批数据集：关键汇总统计（Key Summary Statistics）
 
-- 数据文件: `ZhipiComments.csv`
+- 数据文件: `zhipi_comments_dataset_github_polished.csv`
 - 行数（批语单元）: **4,237**
 - 列数: **56**
 - `comment_id` 唯一值: **4,237**（重复: 0）
@@ -25,8 +25,8 @@
 
 | value | n | % |
 | --- | --- | --- |
-| 甲戌本凡例 | 4235 | 100.0% |
-| (missing) | 1 | 0.0% |
+| (missing) | 4225 | 99.7% |
+| 甲戌本凡例 | 11 | 0.3% |
 | 戚蓼生序 | 1 | 0.0% |
 
 ### `chapter_number`（回目覆盖）
@@ -465,6 +465,7 @@
 | colophon_extra | 4237 | 100.000% |
 | extraction_note | 4237 | 100.000% |
 | signature_marker | 4236 | 99.976% |
+| section | 4225 | 99.717% |
 | signature_confidence | 4170 | 98.419% |
 | signature_exact | 4159 | 98.159% |
 | signature_norm | 4159 | 98.159% |
@@ -481,4 +482,3 @@
 | commenter_confidence | 3590 | 84.730% |
 | anchor_after | 749 | 17.678% |
 | manuscript_version | 720 | 16.993% |
-| anchor_before | 338 | 7.977% |
