@@ -1,9 +1,9 @@
 # 脂批（批注/评语）数据集：变量说明（Data Dictionary）
 
-本仓库包含从《红楼梦》纯文本（TXT）自动抽取的批注/评语（“脂批”）数据集。每一行对应一个“批语单元”（通常是一个【……】括号块中的一条带标签批语；若同一括号块内含多条标签批语，会拆分为多行）。
+本仓库包含从《石头记/红楼梦》纯文本（TXT）自动抽取的批注/评语（“脂批”）数据集。每一行对应一个“批语单元”（通常是一个【……】括号块中的一条带标签批语；若同一括号块内含多条标签批语，会拆分为多行）。
 
 ## 文件
-- `ShiTouJi.txt`：由原始 DOCX 逐段落转写得到的纯文本（每个 DOCX 段落对应 TXT 中一行）。
+- `ShiTouJi.txt`：石头记/红楼梦原始文本，其中【……】括号块内包含批语。
 - `ZhipingComments.csv`：主数据集（本仓库的“可分析数据”）。
 - `BuildCommentsData.py`：复现脚本（从 TXT 生成 CSV）。
 - `LICENSE`：GPL-3.0 许可（适用于脚本/代码；对文本与数据的版权归属请自行核验）。
@@ -85,10 +85,10 @@
 
 ## 复现方法（概要）
 
-1. 确保仓库中存在 `hongloumeng_zhipi_original.txt`。
+1. 获取并确定在仓库中存在带有脂评的红楼梦原始文本 `ShiTouJi.txt`。
 2. 运行：
    ```bash
-   python build_zhipi_comments_dataset.py      --input hongloumeng_zhipi_original.txt      --output zhipi_comments_dataset_github_polished.csv
+   python BuildCommentData.py      --input ShiTouJi.txt      --output ZhipingCommentsRep.csv
    ```
 3. 生成的 CSV 应与仓库版本一致（同列顺序、同规则）。
 
