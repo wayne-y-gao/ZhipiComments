@@ -83,10 +83,10 @@
 
 ## 复现方法（概要）
 
-1. 确保仓库中存在 `hongloumeng_zhipi_original.txt`。
+1. 确保仓库中存在 `ShiTouJi.txt`。
 2. 运行：
    ```bash
-   python build_zhipi_comments_dataset.py      --input hongloumeng_zhipi_original.txt      --output zhipi_comments_dataset_github_polished.csv
+   python BuildZhipiComments.py      --input ShiTouJi.txt      --output ZhipiCommentsRep.csv
    ```
 3. 生成的 CSV 应与仓库版本一致（同列顺序、同规则）。
 
